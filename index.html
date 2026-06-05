@@ -1,87 +1,367 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anime Creator Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        body{
-            margin:0;
-            font-family:Arial, sans-serif;
-            background:#0f172a;
-            color:white;
-        }
+<title>סאב ללא שם</title>
 
-        header{
-            text-align:center;
-            padding:80px 20px;
-            background:linear-gradient(135deg,#6d28d9,#2563eb);
-        }
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-        h1{
-            font-size:3rem;
-        }
+<style>
 
-        .btn{
-            display:inline-block;
-            margin-top:20px;
-            padding:12px 24px;
-            background:white;
-            color:black;
-            text-decoration:none;
-            border-radius:10px;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .section{
-            padding:50px 20px;
-            text-align:center;
-        }
+body{
+    font-family:'Heebo',sans-serif;
+    color:white;
+    overflow-x:hidden;
 
-        .cards{
-            display:flex;
-            gap:20px;
-            justify-content:center;
-            flex-wrap:wrap;
-        }
+    background:
+    radial-gradient(circle at top center,
+    #1b245f 0%,
+    #0f1238 20%,
+    #06081f 55%,
+    #02030d 100%);
+}
 
-        .card{
-            width:250px;
-            background:#1e293b;
-            padding:20px;
-            border-radius:15px;
-        }
-    </style>
+/* רקע זוהר */
+
+body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at 50% -10%,
+    rgba(90,120,255,.35),
+    transparent 50%);
+    pointer-events:none;
+    animation: glow 8s ease-in-out infinite;
+}
+
+@keyframes glow{
+    0%,100%{
+        opacity:.6;
+    }
+    50%{
+        opacity:1;
+    }
+}
+
+/* ניווט */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    backdrop-filter:blur(20px);
+    background:rgba(0,0,0,.25);
+    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:999;
+}
+
+.nav-container{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px;
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:900;
+}
+
+.menu{
+    display:flex;
+    gap:25px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#6d8fff;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.hero h1{
+    font-size:5rem;
+    margin-bottom:20px;
+    text-shadow:0 0 30px rgba(100,130,255,.5);
+}
+
+.hero p{
+    font-size:1.3rem;
+    opacity:.9;
+    margin-bottom:40px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 35px;
+    border-radius:12px;
+    text-decoration:none;
+    transition:.3s;
+    font-weight:700;
+}
+
+.primary{
+    background:#4f7cff;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 30px rgba(79,124,255,.4);
+}
+
+.secondary{
+    border:1px solid rgba(255,255,255,.2);
+    color:white;
+}
+
+.secondary:hover{
+    background:rgba(255,255,255,.08);
+}
+
+/* Sections */
+
+section{
+    max-width:1200px;
+    margin:auto;
+    padding:120px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:60px;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    border-radius:20px;
+    transition:.35s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#4f7cff;
+}
+
+.card h3{
+    margin-bottom:15px;
+}
+
+/* Stats */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:25px;
+}
+
+.stat{
+    text-align:center;
+    padding:30px;
+}
+
+.stat h2{
+    font-size:3rem;
+    color:#6d8fff;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:120px 20px;
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+footer{
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    padding:40px;
+    opacity:.7;
+}
+
+/* אנימציית כניסה */
+
+.fade{
+    animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
-    <h1>Anime Creator Hub</h1>
-    <p>קהילת יוצרי האנימה הגדולה בישראל</p>
-    <a href="#" class="btn">הצטרף עכשיו</a>
-</header>
+<nav>
+    <div class="nav-container">
+        <div class="logo">סאב ללא שם</div>
 
-<section class="section">
-    <h2>מה יש אצלנו?</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>יצירת דמויות</h3>
-            <p>עצב דמויות אנימה משלך</p>
-        </div>
-
-        <div class="card">
-            <h3>גלריה</h3>
-            <p>שתף את היצירות שלך</p>
-        </div>
-
-        <div class="card">
-            <h3>קהילה</h3>
-            <p>מצא יוצרים נוספים</p>
+        <div class="menu">
+            <a href="#">בית</a>
+            <a href="#">גלריה</a>
+            <a href="#">יוצרים</a>
+            <a href="#">קהילה</a>
+            <a href="#">צור קשר</a>
         </div>
     </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content fade">
+
+        <h1>סאב ללא שם</h1>
+
+        <p>
+            קהילה ליוצרי אנימה, מאיירים, אנימטורים ואנשים עם דמיון בלתי מוגבל.
+        </p>
+
+        <div class="buttons">
+            <a href="#" class="btn primary">הצטרף לקהילה</a>
+            <a href="#" class="btn secondary">צפה ביצירות</a>
+        </div>
+
+    </div>
 </section>
+
+<section>
+
+    <h2 class="section-title">מה מחכה לך כאן?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🎨 יצירת דמויות</h3>
+            <p>בנה דמויות אנימה מקוריות ושתף אותן עם הקהילה.</p>
+        </div>
+
+        <div class="card">
+            <h3>🖼️ גלריית יצירות</h3>
+            <p>הצג ציורים, קומיקסים, אנימציות ועבודות מיוחדות.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤝 קהילה פעילה</h3>
+            <p>התחבר ליוצרים נוספים, קבל משוב ולמד מאחרים.</p>
+        </div>
+
+        <div class="card">
+            <h3>🏆 אתגרים ותחרויות</h3>
+            <p>השתתף באתגרים חודשיים וצבור מוניטין.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <h2 class="section-title">הקהילה במספרים</h2>
+
+    <div class="stats">
+
+        <div class="stat">
+            <h2>500+</h2>
+            <p>יצירות</p>
+        </div>
+
+        <div class="stat">
+            <h2>120+</h2>
+            <p>יוצרים</p>
+        </div>
+
+        <div class="stat">
+            <h2>30+</h2>
+            <p>אתגרים</p>
+        </div>
+
+        <div class="stat">
+            <h2>24/7</h2>
+            <p>קהילה פעילה</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta">
+
+    <h2>מוכן להתחיל ליצור?</h2>
+
+    <p style="margin-bottom:30px;">
+        הצטרף עכשיו לסאב ללא שם והפוך את הרעיונות שלך למציאות.
+    </p>
+
+    <a href="#" class="btn primary">
+        הצטרף עכשיו
+    </a>
+
+</section>
+
+<footer>
+    © 2026 סאב ללא שם - כל הזכויות שמורות
+</footer>
 
 </body>
 </html>
