@@ -3,24 +3,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212; /* רקע כהה */
+    background-color: #1e1e24; /* רקע אפור כהה מאוד */
     color: #ffffff; /* טקסט לבן */
 }
 
 /* תפריט ניווט */
 header {
-    background-color: #1a1a1a;
+    background-color: #16161a; /* אפור כהה יותר לתפריט */
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 50px;
-    border-bottom: 3px solid #ff4757; /* פס אדום פאנסאב */
+    border-bottom: 3px solid #8a2be2; /* פס סגול זוהר */
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #ff4757;
+    color: #00d2ff; /* לוגו בצבע כחול בהיר/טורקיז */
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
 }
 
 nav ul {
@@ -32,25 +33,31 @@ nav ul {
 }
 
 nav a {
-    color: #ffffff;
+    color: #a0a0a5; /* אפור בהיר לקישורים שלא לחצו עליהם */
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 nav a:hover, nav a.active {
-    color: #ff4757;
+    color: #8a2be2; /* הופך לסגול כשעוברים עם העכבר */
 }
 
 .admin-link {
-    border: 1px solid #ff4757;
+    border: 1px solid #00d2ff; /* מסגרת כחולה לכפתור הניהול */
     padding: 5px 10px;
     border-radius: 5px;
+    color: #00d2ff !important;
+}
+
+.admin-link:hover {
+    background-color: rgba(0, 210, 255, 0.1);
 }
 
 /* באנר ראשי */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+    /* רקע שמשלב גרדיאנט מסגול לכחול מעל תמונת הרקע */
+    background: linear-gradient(135deg, rgba(138, 43, 226, 0.8), rgba(0, 210, 255, 0.7)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
     height: 300px;
     display: flex;
     justify-content: center;
@@ -61,17 +68,24 @@ nav a:hover, nav a.active {
 .hero-content h1 {
     font-size: 40px;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .btn {
     display: inline-block;
-    background-color: #ff4757;
+    background: linear-gradient(90deg, #8a2be2, #00d2ff); /* כפתור גרדיאנט סגול-כחול */
     color: white;
     padding: 10px 20px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 15px;
     font-weight: bold;
+    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+    transition: transform 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05); /* אפקט הגדלה קטן כשנוגעים בכפתור */
 }
 
 /* עדכונים אחרונים */
@@ -80,7 +94,7 @@ main {
 }
 
 .updates-section h2 {
-    border-right: 5px solid #ff4757;
+    border-right: 5px solid #8a2be2; /* פס סגול ליד הכותרת */
     padding-right: 15px;
     margin-bottom: 25px;
 }
@@ -91,21 +105,23 @@ main {
 }
 
 .update-card {
-    background-color: #1e1e1e;
+    background-color: #2a2a35; /* אפור-סגלגל לכרטיסים */
     padding: 20px;
     border-radius: 8px;
     width: 200px;
     position: relative;
-    border: 1px solid #2d2d2d;
+    border: 1px solid #3a3a4a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .badge {
-    background-color: #ff4757;
-    color: white;
+    background-color: #00d2ff; /* תג כחול לפרקים חדשים */
+    color: #16161a;
     font-size: 12px;
     padding: 3px 8px;
     border-radius: 3px;
     position: absolute;
     top: 10px;
     left: 10px;
+    font-weight: bold;
 }
