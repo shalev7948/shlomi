@@ -11,242 +11,153 @@
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Heebo',sans-serif;
 }
 
 body{
-    font-family:'Heebo',sans-serif;
-    color:white;
-    overflow-x:hidden;
-
-    background:
-    radial-gradient(circle at top center,
-    #1b245f 0%,
-    #0f1238 20%,
-    #06081f 55%,
-    #02030d 100%);
+background:
+radial-gradient(circle at top center,
+#1b245f 0%,
+#0f1238 20%,
+#06081f 55%,
+#02030d 100%);
+color:white;
+min-height:100vh;
 }
-
-/* רקע זוהר */
-
-body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at 50% -10%,
-    rgba(90,120,255,.35),
-    transparent 50%);
-    pointer-events:none;
-    animation: glow 8s ease-in-out infinite;
-}
-
-@keyframes glow{
-    0%,100%{
-        opacity:.6;
-    }
-    50%{
-        opacity:1;
-    }
-}
-
-/* ניווט */
 
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    backdrop-filter:blur(20px);
-    background:rgba(0,0,0,.25);
-    border-bottom:1px solid rgba(255,255,255,.08);
-    z-index:999;
-}
-
-.nav-container{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 7%;
+position:sticky;
+top:0;
+backdrop-filter:blur(20px);
+background:rgba(0,0,0,.2);
+z-index:999;
 }
 
 .logo{
-    font-size:1.4rem;
-    font-weight:900;
+font-size:2rem;
+font-weight:900;
 }
 
-.menu{
-    display:flex;
-    gap:25px;
+.nav-links{
+display:flex;
+gap:25px;
 }
 
-.menu a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
+.nav-links a{
+color:white;
+text-decoration:none;
+transition:.3s;
 }
 
-.menu a:hover{
-    color:#6d8fff;
+.nav-links a:hover{
+color:#7ea0ff;
 }
-
-/* Hero */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:100px 20px;
+height:85vh;
+display:flex;
+align-items:center;
+padding:0 7%;
 }
 
 .hero-content{
-    max-width:900px;
+max-width:700px;
 }
 
 .hero h1{
-    font-size:5rem;
-    margin-bottom:20px;
-    text-shadow:0 0 30px rgba(100,130,255,.5);
+font-size:5rem;
+margin-bottom:20px;
+line-height:1;
 }
 
 .hero p{
-    font-size:1.3rem;
-    opacity:.9;
-    margin-bottom:40px;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+font-size:1.2rem;
+opacity:.85;
+margin-bottom:30px;
 }
 
 .btn{
-    padding:15px 35px;
-    border-radius:12px;
-    text-decoration:none;
-    transition:.3s;
-    font-weight:700;
+padding:14px 30px;
+border-radius:12px;
+border:none;
+cursor:pointer;
+font-size:1rem;
+font-weight:700;
+background:#4f7cff;
+color:white;
+text-decoration:none;
+transition:.3s;
 }
 
-.primary{
-    background:#4f7cff;
-    color:white;
+.btn:hover{
+transform:translateY(-4px);
+box-shadow:0 0 25px rgba(79,124,255,.6);
 }
-
-.primary:hover{
-    transform:translateY(-4px);
-    box-shadow:0 10px 30px rgba(79,124,255,.4);
-}
-
-.secondary{
-    border:1px solid rgba(255,255,255,.2);
-    color:white;
-}
-
-.secondary:hover{
-    background:rgba(255,255,255,.08);
-}
-
-/* Sections */
 
 section{
-    max-width:1200px;
-    margin:auto;
-    padding:120px 20px;
+padding:70px 7%;
 }
 
 .section-title{
-    text-align:center;
-    font-size:2.5rem;
-    margin-bottom:60px;
+font-size:2rem;
+margin-bottom:25px;
 }
 
-/* Cards */
+.anime-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.card-link{
+text-decoration:none;
+color:white;
 }
 
 .card{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-    backdrop-filter:blur(10px);
-    padding:30px;
-    border-radius:20px;
-    transition:.35s;
+background:#111633;
+border-radius:20px;
+overflow:hidden;
+transition:.3s;
+cursor:pointer;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:#4f7cff;
+transform:translateY(-8px);
+box-shadow:0 0 25px rgba(79,124,255,.4);
+}
+
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+}
+
+.card-content{
+padding:15px;
 }
 
 .card h3{
-    margin-bottom:15px;
+margin-bottom:8px;
 }
 
-/* Stats */
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:25px;
-}
-
-.stat{
-    text-align:center;
-    padding:30px;
-}
-
-.stat h2{
-    font-size:3rem;
-    color:#6d8fff;
-}
-
-/* CTA */
-
-.cta{
-    text-align:center;
-    padding:120px 20px;
-}
-
-.cta h2{
-    font-size:3rem;
-    margin-bottom:20px;
+.card p{
+opacity:.75;
+font-size:.9rem;
 }
 
 footer{
-    border-top:1px solid rgba(255,255,255,.08);
-    text-align:center;
-    padding:40px;
-    opacity:.7;
-}
-
-/* אנימציית כניסה */
-
-.fade{
-    animation:fadeUp 1s ease;
-}
-
-@keyframes fadeUp{
-    from{
-        opacity:0;
-        transform:translateY(40px);
-    }
-
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+padding:40px;
+text-align:center;
+opacity:.6;
+border-top:1px solid rgba(255,255,255,.1);
 }
 
 </style>
@@ -255,112 +166,140 @@ footer{
 <body>
 
 <nav>
-    <div class="nav-container">
-        <div class="logo">סאב ללא שם</div>
 
-        <div class="menu">
-            <a href="#">בית</a>
-            <a href="#">גלריה</a>
-            <a href="#">יוצרים</a>
-            <a href="#">קהילה</a>
-            <a href="#">צור קשר</a>
-        </div>
-    </div>
+<div class="logo">סאב ללא שם</div>
+
+<div class="nav-links">
+<a href="index.html">ראשי</a>
+<a href="#">אנימות</a>
+<a href="#">חדשות</a>
+<a href="#">אודות</a>
+</div>
+
 </nav>
 
-<section class="hero">
-    <div class="hero-content fade">
+<header class="hero">
 
-        <h1>סאב ללא שם</h1>
+<div class="hero-content">
 
-        <p>
-            קהילה ליוצרי אנימה, מאיירים, אנימטורים ואנשים עם דמיון בלתי מוגבל.
-        </p>
+<h1>צפה באנימות שאתה אוהב</h1>
 
-        <div class="buttons">
-            <a href="#" class="btn primary">הצטרף לקהילה</a>
-            <a href="#" class="btn secondary">צפה ביצירות</a>
-        </div>
+<p>
+מאגר האנימה של סאב ללא שם.
+צפה בפרקים חדשים, גלה סדרות חדשות
+והישאר מעודכן.
+</p>
 
-    </div>
+<a href="#popular" class="btn">
+התחל לצפות
+</a>
+
+</div>
+
+</header>
+
+<section id="popular">
+
+<h2 class="section-title">🔥 פופולרי עכשיו</h2>
+
+<div class="anime-grid">
+
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?1">
+<div class="card-content">
+<h3>שם האנימה</h3>
+<p>פרק 12 זמין לצפייה</p>
+</div>
+</div>
+</a>
+
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?2">
+<div class="card-content">
+<h3>שם האנימה</h3>
+<p>פרק 5 זמין לצפייה</p>
+</div>
+</div>
+</a>
+
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?3">
+<div class="card-content">
+<h3>שם האנימה</h3>
+<p>פרק 21 זמין לצפייה</p>
+</div>
+</div>
+</a>
+
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?4">
+<div class="card-content">
+<h3>שם האנימה</h3>
+<p>פרק 8 זמין לצפייה</p>
+</div>
+</div>
+</a>
+
+</div>
+
 </section>
 
 <section>
 
-    <h2 class="section-title">מה מחכה לך כאן?</h2>
+<h2 class="section-title">⭐ אנימות חדשות</h2>
 
-    <div class="cards">
+<div class="anime-grid">
 
-        <div class="card">
-            <h3>🎨 יצירת דמויות</h3>
-            <p>בנה דמויות אנימה מקוריות ושתף אותן עם הקהילה.</p>
-        </div>
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?5">
+<div class="card-content">
+<h3>אנימה חדשה</h3>
+<p>נוסף השבוע</p>
+</div>
+</div>
+</a>
 
-        <div class="card">
-            <h3>🖼️ גלריית יצירות</h3>
-            <p>הצג ציורים, קומיקסים, אנימציות ועבודות מיוחדות.</p>
-        </div>
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?6">
+<div class="card-content">
+<h3>אנימה חדשה</h3>
+<p>נוסף השבוע</p>
+</div>
+</div>
+</a>
 
-        <div class="card">
-            <h3>🤝 קהילה פעילה</h3>
-            <p>התחבר ליוצרים נוספים, קבל משוב ולמד מאחרים.</p>
-        </div>
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?7">
+<div class="card-content">
+<h3>אנימה חדשה</h3>
+<p>נוסף השבוע</p>
+</div>
+</div>
+</a>
 
-        <div class="card">
-            <h3>🏆 אתגרים ותחרויות</h3>
-            <p>השתתף באתגרים חודשיים וצבור מוניטין.</p>
-        </div>
+<a href="anime.html" class="card-link">
+<div class="card">
+<img src="https://picsum.photos/400/600?8">
+<div class="card-content">
+<h3>אנימה חדשה</h3>
+<p>נוסף השבוע</p>
+</div>
+</div>
+</a>
 
-    </div>
-
-</section>
-
-<section>
-
-    <h2 class="section-title">הקהילה במספרים</h2>
-
-    <div class="stats">
-
-        <div class="stat">
-            <h2>500+</h2>
-            <p>יצירות</p>
-        </div>
-
-        <div class="stat">
-            <h2>120+</h2>
-            <p>יוצרים</p>
-        </div>
-
-        <div class="stat">
-            <h2>30+</h2>
-            <p>אתגרים</p>
-        </div>
-
-        <div class="stat">
-            <h2>24/7</h2>
-            <p>קהילה פעילה</p>
-        </div>
-
-    </div>
-
-</section>
-
-<section class="cta">
-
-    <h2>מוכן להתחיל ליצור?</h2>
-
-    <p style="margin-bottom:30px;">
-        הצטרף עכשיו לסאב ללא שם והפוך את הרעיונות שלך למציאות.
-    </p>
-
-    <a href="#" class="btn primary">
-        הצטרף עכשיו
-    </a>
+</div>
 
 </section>
 
 <footer>
-    © 2026 סאב ללא שם - כל הזכויות שמורות
+© 2026 סאב ללא שם
 </footer>
 
 </body>
