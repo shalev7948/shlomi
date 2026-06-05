@@ -28,42 +28,46 @@ color:white;
 min-height:100vh;
 }
 
+/* NAVBAR */
+
 nav{
 display:flex;
-justify-content:space-between;
+justify-content:center;
 align-items:center;
-padding:20px 7%;
+padding:20px;
 position:sticky;
 top:0;
 backdrop-filter:blur(20px);
 background:rgba(0,0,0,.2);
 z-index:999;
-}
-
-.logo{
-font-size:2rem;
-font-weight:900;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
 .nav-links{
 display:flex;
-gap:25px;
+gap:35px;
+align-items:center;
 }
 
 .nav-links a{
 color:white;
 text-decoration:none;
 transition:.3s;
+font-weight:500;
 }
 
 .nav-links a:hover{
 color:#7ea0ff;
 }
 
+/* HERO */
+
 .hero{
 height:85vh;
 display:flex;
 align-items:center;
+justify-content:center;
+text-align:center;
 padding:0 7%;
 }
 
@@ -81,6 +85,13 @@ line-height:1;
 font-size:1.2rem;
 opacity:.85;
 margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
 }
 
 .btn{
@@ -101,6 +112,8 @@ transform:translateY(-4px);
 box-shadow:0 0 25px rgba(79,124,255,.6);
 }
 
+/* SECTIONS */
+
 section{
 padding:70px 7%;
 }
@@ -109,6 +122,8 @@ padding:70px 7%;
 font-size:2rem;
 margin-bottom:25px;
 }
+
+/* GRID */
 
 .anime-grid{
 display:grid;
@@ -153,6 +168,8 @@ opacity:.75;
 font-size:.9rem;
 }
 
+/* FOOTER */
+
 footer{
 padding:40px;
 text-align:center;
@@ -167,13 +184,13 @@ border-top:1px solid rgba(255,255,255,.1);
 
 <nav>
 
-<div class="logo">סאב ללא שם</div>
-
 <div class="nav-links">
 <a href="index.html">ראשי</a>
 <a href="#">אנימות</a>
 <a href="#">חדשות</a>
 <a href="#">אודות</a>
+<a href="profile.html">פרופיל</a>
+<a href="login.html">התחברות</a>
 </div>
 
 </nav>
@@ -182,17 +199,25 @@ border-top:1px solid rgba(255,255,255,.1);
 
 <div class="hero-content">
 
-<h1>צפה באנימות שאתה אוהב</h1>
+<h1>סאב ללא שם</h1>
 
 <p>
 מאגר האנימה של סאב ללא שם.
-צפה בפרקים חדשים, גלה סדרות חדשות
+צפה בפרקים, גלה סדרות חדשות
 והישאר מעודכן.
 </p>
+
+<div class="buttons">
 
 <a href="#popular" class="btn">
 התחל לצפות
 </a>
+
+<a href="profile.html" class="btn">
+הפרופיל שלי
+</a>
+
+</div>
 
 </div>
 
